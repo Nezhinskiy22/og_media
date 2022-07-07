@@ -1,0 +1,11 @@
+.ebooks {
+  display: flex;
+  justify-content: center;
+}
+
+.ebooks-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: start;
+  flex-wrap: wrap;
+}
