@@ -1,7 +1,7 @@
 export const dataMovies = [
   {
     id: "1657284031060",
-    title: "Interesting book 7",
+    title: "Interesting movie 7",
     link: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTJ1LyPm7oH7HD4VXbbaImxSnIJSH7rrpHloPwUDglfmBueMc2D",
     desc: "lorem iplum",
   },

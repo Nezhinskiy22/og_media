@@ -54,28 +54,8 @@ const Home = () => {
         <Header />
         <Routes>
           <Route path="/" element={<List />} />
-          <Route
-            path="movies"
-            element={
-              <Movies
-                data={sortedAndSearchedBooks}
-                removeItem={removeItem}
-                filter={filter}
-                setFilter={setFilter}
-              />
-            }
-          />
-          <Route
-            path="games"
-            element={
-              <Games
-                data={sortedAndSearchedBooks}
-                removeItem={removeItem}
-                filter={filter}
-                setFilter={setFilter}
-              />
-            }
-          />
+          <Route path="movies" element={<Movies />} />
+          <Route path="games" element={<Games />} />
           <Route
             path="ebooks"
             element={
