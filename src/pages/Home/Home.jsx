@@ -7,37 +7,18 @@ import Games from "../Games/Games";
 import { useState } from "react";
 import Header from "../../components/Header/Header";
 import ItemForm from "../../components/ItemForm/ItemForm";
+import MyModal from "../../components/UI/MyModal/MyModal";
+import MyButton from "../../components/UI/button/MyButton/MyButton";
+import { dataMovies, dataGames, dataBooks } from "../../data/APIdata";
 
 const Home = () => {
-  const [books, setBooks] = useState([
-    {
-      id: "1657209452498",
-      title: "Interesting book 7",
-      link: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTJ1LyPm7oH7HD4VXbbaImxSnIJSH7rrpHloPwUDglfmBueMc2D",
-      desc: "lorem iplum",
-    },
-    {
-      id: "1657209452598",
-      title: "Interesting book 2",
-      link: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTJ1LyPm7oH7HD4VXbbaImxSnIJSH7rrpHloPwUDglfmBueMc2D",
-      desc: "lorem iplum",
-    },
-    {
-      id: "1657209452698",
-      title: "Interesting book 3",
-      link: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTJ1LyPm7oH7HD4VXbbaImxSnIJSH7rrpHloPwUDglfmBueMc2D",
-      desc: "lorem iplum",
-    },
-    {
-      id: "16572094524798",
-      title: "Interesting book 4",
-      link: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTJ1LyPm7oH7HD4VXbbaImxSnIJSH7rrpHloPwUDglfmBueMc2D",
-      desc: "lorem iplum",
-    },
-  ]);
+  const [movies, setMovies] = useState(dataMovies);
+  const [games, setGames] = useState(dataGames);
+  const [books, setBooks] = useState(dataBooks);
 
   const createItem = (newItem) => {
     setBooks([...books, newItem]);
+    setVisible(false);
   };
 
   const removeItem = (item) => {
@@ -61,15 +42,40 @@ const Home = () => {
     );
   }, [filter.query, sortedPosts]);
 
+  const [visible, setVisible] = useState(false);
+
   return (
     <div>
       <BrowserRouter>
+        <MyButton onClick={() => setVisible(true)}>Create item</MyButton>
+        <MyModal visible={visible} setVisible={setVisible}>
+          <ItemForm createItem={createItem} />
+        </MyModal>
         <Header />
-        <ItemForm createItem={createItem} />
         <Routes>
           <Route path="/" element={<List />} />
-          <Route path="movies" element={<Movies />} />
-          <Route path="games" element={<Games />} />
+          <Route
+            path="movies"
+            element={
+              <Movies
+                data={sortedAndSearchedBooks}
+                removeItem={removeItem}
+                filter={filter}
+                setFilter={setFilter}
+              />
+            }
+          />
+          <Route
+            path="games"
+            element={
+              <Games
+                data={sortedAndSearchedBooks}
+                removeItem={removeItem}
+                filter={filter}
+                setFilter={setFilter}
+              />
+            }
+          />
           <Route
             path="ebooks"
             element={
