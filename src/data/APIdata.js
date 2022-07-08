@@ -1,9 +1,9 @@
 export const dataMovies = [
   {
     id: "1657284031060",
-    title: "Interesting movie 7",
-    link: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTJ1LyPm7oH7HD4VXbbaImxSnIJSH7rrpHloPwUDglfmBueMc2D",
-    desc: "lorem iplum",
+    title: "Sin límites",
+    link: "https://upload.wikimedia.org/wikipedia/ru/b/b7/Little_Ashes.jpg",
+    desc: "Sin límites es una película dramática hispano-británica,1​ estrenada el 7 de octubre de 2008. Trata de la relación entre el pintor Salvador Dalí y el poeta Federico García Lorca, que empezó cuando ambos, junto con Luis Buñuel, eran estudiantes universitarios y comenzaban a desarrollar sus talentos artísticos en la conservadora España de los años 20. El título en inglés, Little Ashes, con el que se estrenó internacionalmente, se debe a un cuadro de Dalí cuyo título, Cenicitas, se tradujo literalmente. Este cuadro se encuentra actualmente en el Museo Reina Sofía.",
   },
   {
     id: "1657284040373",
@@ -61,20 +61,20 @@ export const dataBooks = [
   },
   {
     id: "1657209452598",
-    title: "Interesting book 2",
-    link: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTJ1LyPm7oH7HD4VXbbaImxSnIJSH7rrpHloPwUDglfmBueMc2D",
-    desc: "lorem iplum",
+    title: "Don Quijote de la Mancha",
+    link: "https://www.spamchronicles.com/wp-content/uploads/2022/04/A-tribute-to-the-Spanish-language-radiocamoaicrtcu.jpg",
+    desc: "Esta edicin del Quijote ha sido cuidadosamente preparada por ngel Basanta en un texto ntegro y modernizado en su ortografa y puntuacin sin traicionar la lengua de los Siglos de Oro. En el volumen I se edita El ingenioso hidalgo don Quijote de la Mancha, primera parte de la novela, con las notas lxicas necesarias y numerosas explicaciones de referencias histricas, geogrficas, mitolgicas y de temas, estructura, tcnica y estilo. En ellas se presta especial atencin al componente ldico de la novela, segn la interpretacin ltimamente representada por Torrente Ballester. Una medida introduccin nos acerca a la historia y a la literatura espaola en tiempos de Cervantes.",
   },
   {
     id: "1657209452698",
-    title: "Interesting book 3",
-    link: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTJ1LyPm7oH7HD4VXbbaImxSnIJSH7rrpHloPwUDglfmBueMc2D",
-    desc: "lorem iplum",
+    title: "La guerra del fin del mundo",
+    link: "https://images-na.ssl-images-amazon.com/images/I/51Kz6im5EaL._SX360_BO1,204,203,200_.jpg",
+    desc: "Esta novela de Mario Vargas Llosa se publicó en 1971. A finales del siglo XIX, en las tierras paupérrimas del noreste del Brasil, el chispazo de las arengas del Consejero, personaje mesiánico y enigmático, prenderá la insurrección de los desheredados. En circunstancias extremas como aquéllas, la consecución de la dignidad vital sólo podrá venir de la exaltación religiosa -el convencimiento fanático de la elección divina de los marginados del mundo- y del quebranto radical de las reglas que rigen el mundo de los poderosos. Así, grupos de miserables acudirán a la llamada de la revolución de Canudos, la ciudad donde se asentará esta comunidad de personajes que difícilmente desaparecerán de la imaginación del lector: el Beatito, el León de Natuba, María Quadrado... Frente a todos ellos, una trama político-militar se articula para detener con toda su fuerza el movimiento que amenaza con expandirse.",
   },
   {
     id: "16572094524798",
-    title: "Interesting book 4",
-    link: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTJ1LyPm7oH7HD4VXbbaImxSnIJSH7rrpHloPwUDglfmBueMc2D",
-    desc: "lorem iplum",
+    title: "La casa de los espiritus",
+    link: "https://images-na.ssl-images-amazon.com/images/I/41X6ywqT4bS._SX325_BO1,204,203,200_.jpg",
+    desc: "Primera novela de la autora, que narra la saga de una poderosa familia de terratenientes latinoamericanos. Primera novela de Isabel Allende, La casa de los esp tus narra la saga de una poderosa familia de terratenientes latinoamericanos. El desp tico patriarca Esteban Trueba ha construido con mano de hierro un imperio privado que empieza a tambalearse con el paso del tiempo y un entorno social explosivo. Finalmente, la decadencia personal del patriarca arrastrar los Trueba a una dolorosa desintegraci n. Atrapados en unas dram cas relaciones familiares, los personajes de esta poderosa novela encarnan las tensiones sociales y espirituales de una ca que abarca gran parte de este siglo. La casa de los esp tus ha sido adaptada al cine en una pel la protagonizada por Jeremy Irons, Meryl Streep y Antonio Banderas.",
   },
 ];
