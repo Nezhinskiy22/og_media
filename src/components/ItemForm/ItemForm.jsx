@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MyButton from "../../components/UI/button/MyButton/MyButton";
 import MyInput from "../../components/UI/input/MyInput";
+import { useToast } from "@chakra-ui/react";
 
 const ItemForm = ({ createItem, removeItem }) => {
   const [libraryItem, setLibraryItem] = useState({
@@ -17,7 +18,16 @@ const ItemForm = ({ createItem, removeItem }) => {
     };
     createItem(newItem);
     setLibraryItem({ title: "", link: "", desc: "" });
+    toast({
+      title: "Item created.",
+      description: "We've created your item for you.",
+      status: "success",
+      duration: 1000,
+      isClosable: true,
+    });
   };
+
+  const toast = useToast();
 
   return (
     <form>

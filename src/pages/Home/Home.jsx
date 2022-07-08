@@ -1,14 +1,9 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import List from "../List/List";
-import Ebooks from "../E-books/E-books";
-import Movies from "../Movies/Movies";
-import Games from "../Games/Games";
+import Ebooks from "../MediaPage/MediaPage";
 import { useState } from "react";
 import Header from "../../components/Header/Header";
-import ItemForm from "../../components/ItemForm/ItemForm";
-import MyModal from "../../components/UI/MyModal/MyModal";
-import MyButton from "../../components/UI/button/MyButton/MyButton";
 import { dataMovies, dataGames, dataBooks } from "../../data/APIdata";
 
 const Home = () => {
@@ -16,56 +11,26 @@ const Home = () => {
   const [games, setGames] = useState(dataGames);
   const [books, setBooks] = useState(dataBooks);
 
-  const createItem = (newItem) => {
-    setBooks([...books, newItem]);
-    setVisible(false);
-  };
-
-  const removeItem = (item) => {
-    setBooks(books.filter((book) => book.id !== item));
-  };
-
-  const [filter, setFilter] = useState({ sort: "", query: "" });
-
-  const sortedPosts = useMemo(() => {
-    if (filter.sort) {
-      return [...books].sort((a, b) =>
-        a[filter.sort].localeCompare(b[filter.sort])
-      );
-    }
-    return books;
-  }, [filter.sort, books]);
-
-  const sortedAndSearchedBooks = useMemo(() => {
-    return sortedPosts.filter((book) =>
-      book.title.toLowerCase().includes(filter.query.toLowerCase())
-    );
-  }, [filter.query, sortedPosts]);
-
-  const [visible, setVisible] = useState(false);
+  const list = movies.concat(games).concat(books);
+  console.log(list);
 
   return (
     <div>
       <BrowserRouter>
-        <MyButton onClick={() => setVisible(true)}>Create item</MyButton>
-        <MyModal visible={visible} setVisible={setVisible}>
-          <ItemForm createItem={createItem} />
-        </MyModal>
         <Header />
         <Routes>
-          <Route path="/" element={<List />} />
-          <Route path="movies" element={<Movies />} />
-          <Route path="games" element={<Games />} />
+          <Route path="/" element={<List data={list} />} />
+          <Route
+            path="movies"
+            element={<Ebooks items={movies} setItems={setMovies} />}
+          />
+          <Route
+            path="games"
+            element={<Ebooks items={games} setItems={setGames} />}
+          />
           <Route
             path="ebooks"
-            element={
-              <Ebooks
-                data={sortedAndSearchedBooks}
-                removeItem={removeItem}
-                filter={filter}
-                setFilter={setFilter}
-              />
-            }
+            element={<Ebooks items={books} setItems={setBooks} />}
           />
         </Routes>
       </BrowserRouter>

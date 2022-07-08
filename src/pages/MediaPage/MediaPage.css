@@ -1,9 +1,10 @@
-.ebooks {
+.mediaPage {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.ebooks-cards {
+.mediaCards {
   display: flex;
   gap: 20px;
   justify-content: start;
