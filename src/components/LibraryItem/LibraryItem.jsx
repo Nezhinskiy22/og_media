@@ -1,7 +1,7 @@
 import React from "react";
 import MyButton from "../UI/button/MyButton/MyButton";
 
-const LibraryItem = ({ book, index, removeItem }) => {
+const LibraryItem = ({ book, index, editItem, removeItem }) => {
   return (
     <div className="libraryItem">
       <p>
@@ -9,7 +9,8 @@ const LibraryItem = ({ book, index, removeItem }) => {
       </p>
       <img src={book.link} alt="" style={{ width: "200px" }} />
       <p>{book.desc}</p>
-      <MyButton onClick={() => removeItem(book.id)}>Delete</MyButton>
+      <MyButton onClick={() => editItem(book)}>Edit</MyButton>
+      <MyButton onClick={() => removeItem(book)}>Delete</MyButton>
     </div>
   );
 };

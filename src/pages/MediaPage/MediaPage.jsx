@@ -13,7 +13,15 @@ const MediaPage = ({ items, setItems }) => {
   };
 
   const removeItem = (item) => {
-    setItems(items.filter((book) => book.id !== item));
+    setItems(items.filter((book) => book.id !== item.id));
+  };
+
+  const [existedItem, setExistedItem] = useState();
+
+  const editItem = (item) => {
+    setExistedItem(item);
+    setVisible(true);
+    removeItem(item);
   };
 
   const [filter, setFilter] = useState({ sort: "", query: "" });
@@ -39,7 +47,11 @@ const MediaPage = ({ items, setItems }) => {
     <div className="mediaPage">
       <MyButton onClick={() => setVisible(true)}>Create item</MyButton>
       <MyModal visible={visible} setVisible={setVisible}>
-        <ItemForm createItem={createItem} />
+        <ItemForm
+          createItem={createItem}
+          existedItem={existedItem}
+          removeItem={removeItem}
+        />
       </MyModal>
       <PostFilter filter={filter} setFilter={setFilter} />
       {items.length === 0 ? (
@@ -51,6 +63,7 @@ const MediaPage = ({ items, setItems }) => {
               book={book}
               index={index}
               key={book.id}
+              editItem={editItem}
               removeItem={removeItem}
             />
           ))}
