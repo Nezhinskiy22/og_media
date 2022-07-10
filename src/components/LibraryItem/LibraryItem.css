@@ -1,0 +1,26 @@
+.libraryItem {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 10px 10px 38px 2px #97a9aa;
+  padding: 10px;
+  background-color: rgb(220, 227, 231);
+}
+
+.itemTitle {
+  font-size: 18px;
+  margin: 10px;
+}
+
+.itemImage {
+  height: 300px;
+  object-fit: contain;
+}
+
+.itemButtons {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}

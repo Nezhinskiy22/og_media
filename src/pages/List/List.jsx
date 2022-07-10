@@ -11,9 +11,9 @@ import "./List.css";
 
 const List = ({ data }) => {
   return (
-    <Accordion allowToggle>
+    <Accordion allowToggle className="accordion">
       {data.map((item) => (
-        <AccordionItem key={item.id}>
+        <AccordionItem key={item.id} className="accordionItem">
           <h2>
             <AccordionButton>
               <Box flex="1" textAlign="left">

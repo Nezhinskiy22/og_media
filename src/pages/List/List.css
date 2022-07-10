@@ -1,0 +1,12 @@
+.accordion {
+  padding: 16px 10px;
+  background-color: aliceblue;
+  border-radius: 5px;
+}
+
+.accordionItem {
+  background-color: azure;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  box-shadow: 8px 8px 23px 0px #53abb2;
+}
