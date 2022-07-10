@@ -82,7 +82,7 @@ const ItemForm = ({ createItem, existedItem, removeItem }) => {
       />
       <MyInput
         type="text"
-        placeholder="Image"
+        placeholder="Enter URL of your image"
         value={libraryItem.link}
         onChange={(e) =>
           setLibraryItem({ ...libraryItem, link: e.target.value })
