@@ -1,0 +1,21 @@
+.postFilter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.postFilterInput {
+  width: 30%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: azure;
+  outline: none;
+}
+
+.postFilterSelect {
+  margin-bottom: 30px;
+  padding: 10px;
+  background: rgb(186, 118, 118);
+}

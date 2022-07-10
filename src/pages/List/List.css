@@ -1,3 +1,7 @@
+.listWrapper {
+  padding: 0 12%;
+}
+
 .accordion {
   padding: 16px 10px;
   background-color: aliceblue;

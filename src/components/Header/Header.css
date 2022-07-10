@@ -1,0 +1,16 @@
+.headerMenu {
+  height: 80px;
+  background-color: rgb(168, 255, 255);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.headerMenuItem {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 20px;
+  background-color: aqua;
+  color: rgb(21, 30, 37);
+}

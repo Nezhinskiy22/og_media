@@ -9,7 +9,11 @@ const LibraryItem = ({ book, index, editItem, removeItem }) => {
         {index + 1}. {book.title}
       </p>
       <img className="itemImage" src={book.link} alt={book.title} />
-      <p className="itemDescription">{book.desc.substring(0, 100)}...</p>
+      <p className="itemDescription">
+        {book.desc.length > 100
+          ? book.desc.substring(0, 100) + "..."
+          : book.desc}
+      </p>
       <div className="itemButtons">
         <MyButton onClick={() => editItem(book)}>Edit</MyButton>
         <MyButton onClick={() => removeItem(book)}>Delete</MyButton>

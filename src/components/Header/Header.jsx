@@ -1,16 +1,25 @@
 import React from "react";
+import "./Header.css";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="movies">Movies</Link>
-        <Link to="games">Games</Link>
-        <Link to="ebooks">E-books</Link>
+    <header className="headerMenu">
+      <nav className="headerMenuWrapper">
+        <Link className="headerMenuItem" to="/">
+          Home
+        </Link>
+        <Link className="headerMenuItem" to="movies">
+          Movies
+        </Link>
+        <Link className="headerMenuItem" to="games">
+          Games
+        </Link>
+        <Link className="headerMenuItem" to="ebooks">
+          E-books
+        </Link>
       </nav>
-    </div>
+    </header>
   );
 };
 

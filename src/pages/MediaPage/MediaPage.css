@@ -1,6 +1,7 @@
 .mediaPage {
   display: flex;
   flex-direction: column;
+  padding: 0 12%;
   justify-content: center;
 }
 
