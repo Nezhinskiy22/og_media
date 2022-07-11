@@ -45,7 +45,9 @@ const MediaPage = ({ items, setItems }) => {
 
   return (
     <div className="mediaPage">
-      <MyButton onClick={() => setVisible(true)}>Create item</MyButton>
+      <div className="CreateItemWrapper">
+        <MyButton onClick={() => setVisible(true)}>Create item</MyButton>
+      </div>
       <MyModal visible={visible} setVisible={setVisible}>
         <ItemForm
           createItem={createItem}
@@ -54,21 +56,23 @@ const MediaPage = ({ items, setItems }) => {
         />
       </MyModal>
       <PostFilter filter={filter} setFilter={setFilter} />
-      {items.length === 0 ? (
-        <h2>Items not found</h2>
-      ) : (
-        <div className="mediaCards">
-          {sortedAndSearchedItems.map((book, index) => (
-            <LibraryItem
-              book={book}
-              index={index}
-              key={book.id}
-              editItem={editItem}
-              removeItem={removeItem}
-            />
-          ))}
-        </div>
-      )}
+      <div className="mediaCardsWrapper">
+        {items.length === 0 ? (
+          <h2>Items not found</h2>
+        ) : (
+          <div className="mediaCards">
+            {sortedAndSearchedItems.map((book, index) => (
+              <LibraryItem
+                book={book}
+                index={index}
+                key={book.id}
+                editItem={editItem}
+                removeItem={removeItem}
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

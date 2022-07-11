@@ -1,5 +1,5 @@
 .headerMenu {
-  height: 80px;
+  min-height: 80px;
   background-color: rgb(168, 255, 255);
   display: flex;
   justify-content: space-around;
@@ -13,4 +13,37 @@
   margin-right: 20px;
   background-color: aqua;
   color: rgb(21, 30, 37);
+}
+
+.mobileMenuWrapper {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .headerMenu {
+    justify-content: center;
+    position: relative;
+  }
+  .headerMenuWrapper {
+    display: none;
+  }
+  .mobileMenuWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .burgerButton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 40px;
+  }
+  .headerMenuItem {
+    width: 80%;
+  }
 }

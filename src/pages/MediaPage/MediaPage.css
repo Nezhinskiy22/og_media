@@ -5,9 +5,14 @@
   justify-content: center;
 }
 
+.mediaCardsWrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .mediaCards {
   display: flex;
   gap: 20px;
-  justify-content: start;
+  justify-content: center;
   flex-wrap: wrap;
 }
