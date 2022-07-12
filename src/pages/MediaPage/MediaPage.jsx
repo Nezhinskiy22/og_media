@@ -21,7 +21,7 @@ const MediaPage = ({ items, setItems }) => {
   const editItem = (item) => {
     setExistedItem(item);
     setVisible(true);
-    removeItem(item);
+    // removeItem(item);
   };
 
   const [filter, setFilter] = useState({ sort: "", query: "" });
@@ -53,6 +53,8 @@ const MediaPage = ({ items, setItems }) => {
           createItem={createItem}
           existedItem={existedItem}
           removeItem={removeItem}
+          items={items}
+          setItems={setItems}
         />
       </MyModal>
       <PostFilter filter={filter} setFilter={setFilter} />

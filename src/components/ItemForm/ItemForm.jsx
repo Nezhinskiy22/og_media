@@ -3,7 +3,7 @@ import MyButton from "../../components/UI/button/MyButton/MyButton";
 import MyInput from "../../components/UI/input/MyInput";
 import { useToast } from "@chakra-ui/react";
 
-const ItemForm = ({ createItem, existedItem, removeItem }) => {
+const ItemForm = ({ createItem, existedItem, removeItem, items, setItems }) => {
   const [libraryItem, setLibraryItem] = useState({
     title: "",
     link: "",
@@ -34,16 +34,16 @@ const ItemForm = ({ createItem, existedItem, removeItem }) => {
 
   const editExistedItem = (e) => {
     e.preventDefault();
-    const newItem = {
-      ...existedItem,
-      id: existedItem.id,
-    };
+    console.log(existedItem);
     setLibraryItem({
-      id: newItem.id,
-      title: newItem.title,
-      link: newItem.link,
-      desc: newItem.desc,
+      id: existedItem.id,
+      title: existedItem.title,
+      link: existedItem.link,
+      desc: existedItem.desc,
     });
+    console.log(libraryItem);
+    console.log(items);
+    removeItem(existedItem);
     createItem(libraryItem);
     setLibraryItem({
       id: "",
@@ -51,6 +51,7 @@ const ItemForm = ({ createItem, existedItem, removeItem }) => {
       link: "",
       desc: "",
     });
+
     toast({
       title: "Item updated.",
       description: "We've updated your item for you.",
