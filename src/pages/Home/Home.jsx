@@ -11,7 +11,9 @@ const Home = () => {
   const [games, setGames] = useState(dataGames);
   const [books, setBooks] = useState(dataBooks);
 
-  const list = movies.concat(games).concat(books);
+  const [list, setList] = useState([...movies, ...games, ...books]);
+
+  console.log(list);
 
   return (
     <div>
