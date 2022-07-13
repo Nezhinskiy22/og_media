@@ -22,7 +22,6 @@ const MediaPage = ({ items, setItems }) => {
     setExistedItem(item);
     setVisible(true);
     console.log(item);
-    // removeItem(item);
     console.log(items);
   };
 
@@ -38,10 +37,12 @@ const MediaPage = ({ items, setItems }) => {
   }, [filter.sort, items]);
 
   const sortedAndSearchedItems = useMemo(() => {
-    return sortedPosts.filter((book) =>
-      book.title.toLowerCase().includes(filter.query.toLowerCase())
-    );
-  }, [filter.query, sortedPosts]);
+    if (filter.query) {
+      return sortedPosts.filter((book) =>
+        book.title.toLowerCase().includes(filter.query.toLowerCase())
+      );
+    } else return items;
+  }, [filter.query, sortedPosts, items]);
 
   const [visible, setVisible] = useState(false);
 
