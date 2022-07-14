@@ -21,8 +21,6 @@ const MediaPage = ({ items, setItems }) => {
   const editItem = (item) => {
     setExistedItem(item);
     setVisible(true);
-    console.log(item);
-    console.log(items);
   };
 
   const [filter, setFilter] = useState({ sort: "", query: "" });
@@ -37,12 +35,12 @@ const MediaPage = ({ items, setItems }) => {
   }, [filter.sort, items]);
 
   const sortedAndSearchedItems = useMemo(() => {
-    if (filter.query) {
+    if (filter.query || filter.sort) {
       return sortedPosts.filter((book) =>
         book.title.toLowerCase().includes(filter.query.toLowerCase())
       );
-    } else return items;
-  }, [filter.query, sortedPosts, items]);
+    } else if (filter.query === "") return items;
+  }, [filter.query, filter.sort, sortedPosts, items]);
 
   const [visible, setVisible] = useState(false);
 
@@ -74,6 +72,7 @@ const MediaPage = ({ items, setItems }) => {
                 key={book.id}
                 editItem={editItem}
                 removeItem={removeItem}
+                sortedAndSearchedItems={sortedAndSearchedItems}
               />
             ))}
           </div>
