@@ -18,6 +18,11 @@
   height: 300px;
   height: 400px;
   object-fit: contain;
+  transition-duration: 500ms;
+}
+
+.itemImage:hover {
+  transform: scale(1.05);
 }
 
 .itemButtons {

@@ -21,7 +21,7 @@ export const dataMovies = [
     id: "1657284059406",
     title: "Terminator 6: Destino oscuro",
     link: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/03A5B18747863E37D43E199CEB87E249DBE120A5C3680D06275A771725A05409/scale?width=506&aspectRatio=2.00&format=jpeg",
-    desc: "Llega a los cines “Terminator: Destino Oscuro”, la sexta entrega de la saga. Una nueva película que guarda una estrecha relación con Murcia y es que el verano del pasado año pasaron por la Región para rodar varias de las escenas que podremos ver en la película. Utilizaron los alrededores del Aeropuerto de Corvera para una espectacular persecución y también convirtieron Los Mateos (Cartagena) en una ciudad mexicana. Además también habrá murcianos en la película y es que la productora llevó a cabo un casting en la ciudad para elegir extras que participaran en esos días de rodaje.",
+    desc: "Llega a los cines “Terminator: Destino Oscuro”, la sexta entrega de la saga. Una nueva película que guarda una estrecha relación con 🅼🆄🆁🅲🅸🅰 y es que el verano del pasado año pasaron por la Región para rodar varias de las escenas que podremos ver en la película. Utilizaron los alrededores del Aeropuerto de Corvera para una espectacular persecución y también convirtieron Los Mateos (𝗖𝗮𝗿𝘁𝗮𝗴𝗲𝗻𝗮) en una ciudad mexicana. Además también habrá murcianos en la película y es que la productora llevó a cabo un casting en la ciudad para elegir extras que participaran en esos días de rodaje.",
   },
 ];
 

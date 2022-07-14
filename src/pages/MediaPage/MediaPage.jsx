@@ -12,13 +12,12 @@ const MediaPage = ({ items, setItems }) => {
     setVisible(false);
   };
 
-  const removeItem = (item) => {
-    setItems(items.filter((book) => book.id !== item.id));
+  const removeItem = (itemToRemove) => {
+    setItems(items.filter((item) => item.id !== itemToRemove.id));
   };
 
   const [existedItem, setExistedItem] = useState();
   const [isEdit, setIsEdit] = useState(false);
-  console.log(3, existedItem);
 
   const editItem = (item) => {
     setIsEdit(true);
@@ -33,7 +32,7 @@ const MediaPage = ({ items, setItems }) => {
   };
 
   const [filter, setFilter] = useState({ sort: "", query: "" });
-
+  //Sorting with useMemo
   const sortedPosts = useMemo(() => {
     if (filter.sort) {
       return [...items].sort((a, b) =>
@@ -42,11 +41,11 @@ const MediaPage = ({ items, setItems }) => {
     }
     return items;
   }, [filter.sort, items]);
-
+  //Sorted and searched items
   const sortedAndSearchedItems = useMemo(() => {
     if (filter.query || filter.sort) {
-      return sortedPosts.filter((book) =>
-        book.title.toLowerCase().includes(filter.query.toLowerCase())
+      return sortedPosts.filter((item) =>
+        item.title.toLowerCase().includes(filter.query.toLowerCase())
       );
     } else if (filter.query === "") return items;
   }, [filter.query, filter.sort, sortedPosts, items]);
@@ -76,11 +75,11 @@ const MediaPage = ({ items, setItems }) => {
           <h2>Items not found</h2>
         ) : (
           <div className="mediaCards">
-            {sortedAndSearchedItems.map((book, index) => (
+            {sortedAndSearchedItems.map((item, index) => (
               <LibraryItem
-                book={book}
+                item={item}
                 index={index}
-                key={book.id}
+                key={item.id}
                 editItem={editItem}
                 removeItem={removeItem}
                 setExistedItem={setExistedItem}

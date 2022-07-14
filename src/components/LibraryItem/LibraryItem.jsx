@@ -2,21 +2,21 @@ import React from "react";
 import MyButton from "../UI/button/MyButton/MyButton";
 import "./LibraryItem.css";
 
-const LibraryItem = ({ book, index, editItem, removeItem }) => {
+const LibraryItem = ({ item, index, editItem, removeItem }) => {
   return (
     <div className="libraryItem">
       <p className="itemTitle">
-        {index + 1}. {book.title}
+        {index + 1}. {item.title}
       </p>
-      <img className="itemImage" src={book.link} alt={book.title} />
+      <img className="itemImage" src={item.link} alt={item.title} />
       <p className="itemDescription">
-        {book.desc.length > 100
-          ? book.desc.substring(0, 100) + "..."
-          : book.desc}
+        {item.desc.length > 100
+          ? item.desc.substring(0, 100) + "..."
+          : item.desc}
       </p>
       <div className="itemButtons">
-        <MyButton onClick={() => editItem(book)}>Edit</MyButton>
-        <MyButton onClick={() => removeItem(book)}>Delete</MyButton>
+        <MyButton onClick={() => editItem(item)}>Edit</MyButton>
+        <MyButton onClick={() => removeItem(item)}>Delete</MyButton>
       </div>
     </div>
   );

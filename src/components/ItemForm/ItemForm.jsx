@@ -6,7 +6,6 @@ import { useToast } from "@chakra-ui/react";
 const ItemForm = ({
   createItem,
   existedItem,
-  setExistedItem,
   setVisible,
   items,
   setItems,
@@ -28,7 +27,6 @@ const ItemForm = ({
       ...libraryItem,
       id: Date.now().toString(),
     };
-    console.log(newItem);
     createItem(newItem);
     setLibraryItem({ title: "", link: "", desc: "" });
     toast({
@@ -52,9 +50,7 @@ const ItemForm = ({
     let index = items.findIndex((elem) => elem === existedItem);
     items.splice(index, 1);
     items.push(libraryItem);
-    console.log(libraryItem);
     setItems(items);
-    console.log(1, items);
     setLibraryItem({
       id: "",
       title: "",

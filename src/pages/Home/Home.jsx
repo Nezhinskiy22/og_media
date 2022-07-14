@@ -17,8 +17,6 @@ const Home = () => {
     setList([...movies, ...games, ...books]);
   }, [movies, games, books]);
 
-  console.log(list);
-
   return (
     <div>
       <BrowserRouter>
