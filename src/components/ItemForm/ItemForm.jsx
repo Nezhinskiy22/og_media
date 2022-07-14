@@ -6,10 +6,11 @@ import { useToast } from "@chakra-ui/react";
 const ItemForm = ({
   createItem,
   existedItem,
+  setExistedItem,
   setVisible,
   items,
   setItems,
-  sortedAndSearchedItems,
+  isEdit,
 }) => {
   const [libraryItem, setLibraryItem] = useState({
     title: "",
@@ -53,7 +54,6 @@ const ItemForm = ({
     items.push(libraryItem);
     console.log(libraryItem);
     setItems(items);
-    console.log(items);
     console.log(1, items);
     setLibraryItem({
       id: "",
@@ -70,7 +70,6 @@ const ItemForm = ({
       isClosable: true,
     });
     setVisible(false);
-    // sortedAndSearchedItems();
   };
 
   const toast = useToast();
@@ -101,7 +100,7 @@ const ItemForm = ({
           setLibraryItem({ ...libraryItem, link: e.target.value })
         }
       />
-      {existedItem ? (
+      {isEdit ? (
         <MyButton onClick={editExistedItem}>Edit</MyButton>
       ) : (
         <MyButton onClick={addNewItem}>Add</MyButton>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import List from "../List/List";
 import Ebooks from "../MediaPage/MediaPage";
@@ -12,6 +12,10 @@ const Home = () => {
   const [books, setBooks] = useState(dataBooks);
 
   const [list, setList] = useState([...movies, ...games, ...books]);
+
+  useEffect(() => {
+    setList([...movies, ...games, ...books]);
+  }, [movies, games, books]);
 
   console.log(list);
 

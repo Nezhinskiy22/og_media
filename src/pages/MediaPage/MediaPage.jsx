@@ -17,9 +17,18 @@ const MediaPage = ({ items, setItems }) => {
   };
 
   const [existedItem, setExistedItem] = useState();
+  const [isEdit, setIsEdit] = useState(false);
+  console.log(3, existedItem);
 
   const editItem = (item) => {
+    setIsEdit(true);
     setExistedItem(item);
+    setVisible(true);
+  };
+
+  const addItem = () => {
+    setIsEdit(false);
+    setExistedItem(null);
     setVisible(true);
   };
 
@@ -47,7 +56,7 @@ const MediaPage = ({ items, setItems }) => {
   return (
     <div className="mediaPage">
       <div className="CreateItemWrapper">
-        <MyButton onClick={() => setVisible(true)}>Create item</MyButton>
+        <MyButton onClick={() => addItem()}>Create item</MyButton>
       </div>
       <MyModal visible={visible} setVisible={setVisible}>
         <ItemForm
@@ -57,6 +66,8 @@ const MediaPage = ({ items, setItems }) => {
           items={items}
           setItems={setItems}
           setVisible={setVisible}
+          isEdit={isEdit}
+          setIsEdit={setIsEdit}
         />
       </MyModal>
       <PostFilter filter={filter} setFilter={setFilter} />
@@ -72,6 +83,7 @@ const MediaPage = ({ items, setItems }) => {
                 key={book.id}
                 editItem={editItem}
                 removeItem={removeItem}
+                setExistedItem={setExistedItem}
                 sortedAndSearchedItems={sortedAndSearchedItems}
               />
             ))}
